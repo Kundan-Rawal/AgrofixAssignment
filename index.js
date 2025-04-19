@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import cors from 'cors';
 import { config } from 'dotenv';
 import pool from './db.js'; 
+import serverless from 'serverless-http';
 import { authenticateUser, authorizeRole,matchUserId } from './middleware/auth.js';
 
 config();  
@@ -479,3 +480,5 @@ app.post('/cart/:user_id/checkout', authenticateUser, matchUserId, async (req, r
     res.status(500).json({ message: 'Failed to checkout' });
   }
 });
+
+export default serverless(app)
