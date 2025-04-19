@@ -485,4 +485,4 @@ app.post('/cart/:user_id/checkout', authenticateUser, matchUserId, async (req, r
   }
 });
 
-export const handler = serverless(app);
+export default serverless(app);
