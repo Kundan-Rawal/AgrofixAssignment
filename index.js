@@ -107,13 +107,13 @@ app.post('/users/login', async (req, res) => {
 
 
 app.post('/products',authenticateUser,authorizeRole("admin"), async (req, res) => {
-  const { name, price_per_kg, rating } = req.body;
+  const { name, price_per_kg, rating,image } = req.body;
 
   try {
     const result = await pool.query(
-      `INSERT INTO products (name, price_per_kg, rating)
-       VALUES ($1, $2, $3) RETURNING *`,
-      [name, price_per_kg, rating]
+      `INSERT INTO products (name, price_per_kg, rating,image)
+       VALUES ($1, $2, $3, $4) RETURNING *`,
+      [name, price_per_kg, rating,image]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {

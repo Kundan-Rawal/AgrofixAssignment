@@ -20,7 +20,7 @@ export const authenticateUser = async (req, res, next) => {
 
     // Convert to promise-based verification
     const user = await new Promise((resolve, reject) => {
-      jwt.verify(token, process.env.SECRET_KEY_BACKEND_JWT, (err, decoded) => {
+      jwt.verify(token, process.env.SECERET_KEY_BACKEND_JWT, (err, decoded) => {
         err ? reject(err) : resolve(decoded);
       });
     });
