@@ -66,7 +66,7 @@ app.post('/users/signup', async (req, res) => {
 
 
 app.post('/users/login', async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, role} = req.body;
 
   try {
     // Check if user exists
