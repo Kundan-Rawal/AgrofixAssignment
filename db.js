@@ -4,7 +4,6 @@ config(); // ✅ load .env right here
 
 const { Pool } = pkg;
 
-console.log("DB URL:", process.env.DATABASE_URL); // Confirm it logs
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
