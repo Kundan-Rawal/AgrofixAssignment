@@ -16,7 +16,7 @@ console.log(process.env.DATABASE_URL)
 app.use(cors());  
 app.use(express.json()); 
 
-app.get('agrofix-assignment-zeta.vercel.app/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('API is working!');
 });
 
