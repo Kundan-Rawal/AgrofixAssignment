@@ -1,0 +1,68 @@
+.cart-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #e6fffa;
+    border: 2px solid #38b2ac;
+    border-radius: 10px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .cart-title {
+    color: #2c7a7b;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .cart-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #b2f5ea;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .cart-price {
+    color: #2c7a7b;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .cart-remove-btn {
+    background-color: #319795;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 100px;
+  }
+  
+  .cart-remove-btn:hover {
+    background-color: #2c7a7b;
+  }
+  
+  .cart-total {
+    font-size: 1.2rem;
+    text-align: right;
+    color: #285e61;
+    font-weight: bold;
+  }
+  
+  .cart-empty,
+  .cart-error,
+  .cart-loading {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #2c7a7b;
+  }
+  

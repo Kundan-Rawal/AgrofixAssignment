@@ -1,0 +1,46 @@
+.logincontainer{
+    width: 400px;
+    height: 400px;
+    border: solid 3px teal ;
+    background-color: rgb(240, 255, 255);
+    margin-top: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbutton1{
+    background-color: teal;
+    border: none;
+    color: #fff;
+    width: 60%;
+    margin-bottom: 20px;
+    height: 50px;
+    border-radius: 15px;
+    transition-duration:0.15s ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.loginbutton1:hover{
+    color: teal;
+    background-color: rgb(200, 255, 255);
+    border: solid 2px teal ;
+    cursor: pointer;
+
+}
+.donthaveaccline{
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.spandonthaveaccline{
+    font-weight: 600;
+    color: teal;
+    cursor: pointer;
+
+}
