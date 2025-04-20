@@ -1,6 +1,6 @@
 import pkg from 'pg';
 import { config } from 'dotenv';
-config(); // ✅ load .env right here
+config(); // 
 
 const { Pool } = pkg;
 

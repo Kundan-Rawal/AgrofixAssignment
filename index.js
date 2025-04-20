@@ -12,7 +12,7 @@ config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors());
 
 app.use(express.json()); 
 
@@ -337,7 +337,7 @@ app.post('/cart',authenticateUser, async (req, res) => {
     }
 
     const product = productResult.rows[0];
-    const totalPrice = quantity * product.price_per_kg;
+    const totalPrice = parseInt(quantity) * parseInt(product.price_per_kg);
 
     // Add item to cart
     const result = await pool.query(
@@ -381,7 +381,7 @@ app.get('/cart/:user_id',authenticateUser,matchUserId, async (req, res) => {
        WHERE ci.cart_id = $1`,
       [cartId]
     );
-    const total_price = itemsResult.rows.reduce((sum, item) => sum + item.total_price, 0);
+    const total_price = itemsResult.rows.reduce((sum, item) => sum + parseFloat(item.total_price), 0);
     res.json({ cart_id: cartId, total_price, items: itemsResult.rows });
   } catch (err) {
     console.error(err);
@@ -392,7 +392,7 @@ app.get('/cart/:user_id',authenticateUser,matchUserId, async (req, res) => {
 
 
 
-app.delete('/cart/:user_id/items/:id',authenticateUser,matchUserId, async (req, res) => {
+app.delete('/cart/:user_id/items/:id', authenticateUser, matchUserId, async (req, res) => {
   const { user_id, id } = req.params;
 
   try {
@@ -424,7 +424,6 @@ app.delete('/cart/:user_id/items/:id',authenticateUser,matchUserId, async (req, 
     res.status(500).json({ message: 'Failed to remove item from cart' });
   }
 });
-
 
 
 
